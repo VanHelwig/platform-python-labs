@@ -1,0 +1,12 @@
+2026-11-19T10:15:01Z INFO api Request completed
+2026-11-19T10:15:02Z ERROR database Connection timeout
+2026-11-19T10:15:03Z WARNING api High latency detected
+2026-11-19T10:15:04Z ERROR database Connection timeout
+2026-11-19T10:15:05Z CRITICAL worker Queue unavailable
+not a valid log entry
+2026-11-19T10:15:06Z DEBUG api Trace request
+2026-11-19T10:15:07Z ERROR api Upstream timeout
+2026-11-19T10:15:08Z ERROR worker Queue unavailable
+2026-11-19T10:15:09Z ERROR api Upstream timeout
+2026-11-19T10:15:10Z ERROR database Connection timeout
+2026-11-19T10:15:11Z INFO api Request completed
