@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "platform-python-labs"
+version = "0.1.0"
+description = "Practical Python platform engineering exercises"
+requires-python = ">=3.12"
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "ruff>=0.9,<1"]
+
+[tool.setuptools]
+py-modules = []
+
+[tool.pytest.ini_options]
+testpaths = ["exercises"]
+python_files = ["test_*.py"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
