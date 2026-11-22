@@ -8,7 +8,7 @@ Each exercise is an independent engineering lab with requirements, fixtures, and
 
 ## Fedora setup
 
-Requires Python 3.12 or newer, Git, and Python's venv support.
+Requires Python 3.15 or newer, Git, and Python's venv support.
 
 ```bash
 python3 --version
