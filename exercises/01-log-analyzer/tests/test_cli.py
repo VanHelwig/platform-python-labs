@@ -45,9 +45,12 @@ def test_json_summary():
 def test_inclusive_time_filter():
     result = run_cli(
         str(FIXTURE),
-        "--start", "2026-11-19T10:15:03Z",
-        "--end", "2026-11-19T10:15:05Z",
-        "--format", "json",
+        "--start",
+        "2026-11-19T10:15:03Z",
+        "--end",
+        "2026-11-19T10:15:05Z",
+        "--format",
+        "json",
     )
     assert result.returncode == 0, result.stderr
     data = json.loads(result.stdout)
@@ -81,8 +84,10 @@ def test_malformed_lines(tmp_path):
 def test_invalid_time_range():
     result = run_cli(
         str(FIXTURE),
-        "--start", "2026-11-19T11:00:00Z",
-        "--end", "2026-11-19T10:00:00Z",
+        "--start",
+        "2026-11-19T11:00:00Z",
+        "--end",
+        "2026-11-19T10:00:00Z",
     )
     assert result.returncode == 2
     assert result.stderr.strip()
