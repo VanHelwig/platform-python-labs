@@ -10,6 +10,9 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
+VALID_LOG_LEVELS = frozenset({
+    "DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"
+})
 
 def parse_timestamp(value: str) -> datetime:
     """Parse an ISO 8601 timestamp and require timezone information."""
@@ -29,8 +32,29 @@ def parse_timestamp(value: str) -> datetime:
 
 
 def parse_log_line(line: str) -> dict | None:
-    """Parse a single log entry, returning None if malformed."""
-    raise NotImplementedError
+    parts = line.split(maxsplit=3)
+
+    if len(parts) != 4:
+        return None
+
+    timestamp, level, component, message = parts
+
+    if level not in VALID_LOG_LEVELS:
+        return None
+
+    try:
+        timestamp = parse_timestamp(timestamp)
+    except argparse.ArgumentTypeError:
+        return None
+
+    log_entry = {
+        "timestamp": timestamp,
+        "level": level,
+        "component": component,
+        "message": message,
+    }
+    
+    return log_entry
 
 
 def analyze_logs(
@@ -39,6 +63,11 @@ def analyze_logs(
     end: datetime | None = None,
 ) -> dict:
     """Analyze log entries and return summary statistics."""
+    
+    # still need to implement the logic for analyzing logs
+    for line in lines:
+        entry = parse_log_line(line)
+        
     raise NotImplementedError
 
 
